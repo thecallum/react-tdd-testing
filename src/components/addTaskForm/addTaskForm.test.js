@@ -23,11 +23,20 @@ describe("AddTaskForm", () => {
 
   it("can clear the input field when the form has been submitted", () => {
     // Arrange
-    
+
     // Act
 
     // Assert
 
   });
+
+  it("displays an alert message when the form is submitted with an empty input", () => {
+    // Arrange
+
+    // Act
+
+    // Assert
+
+  })
 });
 
