@@ -3,8 +3,10 @@ import userEvent from "@testing-library/user-event";
 import AddTaskForm from "./addTaskForm";
 
 describe("AddTaskForm", () => {
-  it("can can call the addTask method when the add task button is clicked", () => {
+  it("can call the addTask method when the add task button is clicked", () => {
     // Arrange
+
+
 
     // Act
 
@@ -12,7 +14,7 @@ describe("AddTaskForm", () => {
 
   });
 
-  it("can can call the addTask method when the form is submitted", () => {
+  it("can call the addTask method when the form is submitted", () => {
     // Arrange
 
     // Act
