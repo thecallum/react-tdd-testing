@@ -1,9 +1,9 @@
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import AddTaskForm from "./addTaskForm";
 
 describe("AddTaskForm", () => {
-  it("can call the addTask method when the add task button is clicked", () => {
+  it("can call the addTask method when the form is submitted", () => {
     // Arrange
 
     // 1. Setup mock variables
@@ -36,12 +36,6 @@ describe("AddTaskForm", () => {
     // 7. Assert that the parameter 'AddTask' was called with the description of the task
     expect(addTaskMock).toHaveBeenCalledWith(inputText);
 
-  });
-
-  it("can call the addTask method when the form is submitted", () => {
-    // Arrange
-    // Act
-    // Assert
   });
 
   it("can clear the input field when the form has been submitted", () => {
