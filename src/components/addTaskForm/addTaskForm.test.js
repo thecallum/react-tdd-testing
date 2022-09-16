@@ -77,8 +77,34 @@ describe("AddTaskForm", () => {
 
   it("displays an alert message when the form is submitted with an empty input", () => {
     // Arrange
+
+        // 1. Setup mock variables
+        const addTaskMock = jest.fn();
+
+        // 2. Setup a jest spy to watch window.alert 
+        const alertMock = jest.spyOn(window, "alert");
+    
+        // 3. Render the component
+        const { container } = render(<AddTaskForm addTask={addTaskMock} />);
+
     // Act
+
+        // 4. Find the add task button
+        const submitButton = container.querySelector(
+          '[data-test="add-task-button"]'
+        );
+
+        // 5. Click the button
+        userEvent.click(submitButton);
+
     // Assert
+
+        // 6. Assert that window.alert was called
+        expect(alertMock).toHaveBeenCalled();
+
+        // 7. Assert that the parameter 'AddTask' was not called
+        expect(addTaskMock).toHaveBeenCalledTimes(0);
+
   });
 });
 
