@@ -1,13 +1,14 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 export default function AddTaskForm({ addTask }) {
   const [taskDescription, setDescription] = useState("");
 
-  const handleAddTask = e => {
+  const handleAddTask = (e) => {
     e.preventDefault();
 
-    addTask(taskDescription)
-  }
+    addTask(taskDescription);
+    setDescription("");
+  };
 
   return (
     <form className="addTask-form" onSubmit={handleAddTask}>
@@ -18,7 +19,7 @@ export default function AddTaskForm({ addTask }) {
         className="addTask-input"
         placeholder="Add a task"
         data-test="add-task-input"
-        onChange={e => setDescription(e.target.value)}
+        onChange={(e) => setDescription(e.target.value)}
         value={taskDescription}
       />
       <button
