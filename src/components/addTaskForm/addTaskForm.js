@@ -6,6 +6,11 @@ export default function AddTaskForm({ addTask }) {
   const handleAddTask = (e) => {
     e.preventDefault();
 
+    if (taskDescription === "") {
+      window.alert("You cannot create a task with an empty description")
+      return
+    }
+
     addTask(taskDescription);
     setDescription("");
   };
