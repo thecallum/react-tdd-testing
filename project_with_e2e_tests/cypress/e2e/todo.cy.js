@@ -59,7 +59,7 @@ describe("todo", () => {
   });
 
   it("displays a message when no tasks are in the list", () => {
-    // 7. Assert that 'no tasks' message exists
+    // 1. Assert that 'no tasks' message exists
     cy.get('[data-test="taskList-no-tasks"]');
   });
 
@@ -79,7 +79,7 @@ describe("todo", () => {
     // 4. Find first task in list - toggle checkbox
     cy.get('[data-test="task-checkbox"]').first().click()
 
-    // 7. Assert checkbox is checked
+    // 5. Assert checkbox is checked
     cy.get('[data-test="task-checkbox"]').first().should("be.checked");
   });
 });
